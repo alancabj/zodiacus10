@@ -1,0 +1,17 @@
+/* src/index.css */
+
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #4B0082;
+  color: #DAA520;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
