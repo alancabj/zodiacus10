@@ -18,51 +18,39 @@ const LoginScreen = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setError('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
 
-  try {
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify(formData),
-    });
-
-    console.log('Status:', res.status);
-    console.log('Headers:', [...res.headers.entries()]);
-    const text = await res.text();
-    console.log('Response body:', text);
-
-    let data;
     try {
-      data = JSON.parse(text);
-    } catch (jsonError) {
-      console.error('Error parsing JSON:', jsonError);
-      setError('Respuesta inválida del servidor (no es JSON).');
-      return;
+      const res = await fetch('http://192.168.1.35:5001/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.message || 'Error en login');
+        return;
+      }
+
+      login({
+        userId: data.userId,
+        fullName: formData.fullName,
+        zodiacSign: data.zodiacSign,
+        photoPath: data.photoPath,
+      });
+
+      localStorage.setItem('token', data.token);
+
+      // Redirigir a selección de salas
+      navigate('/home');
+    } catch (err) {
+      setError('Error de conexión con el servidor.');
     }
-
-    if (!res.ok) {
-      setError(data.message || 'Error en login');
-      return;
-    }
-
-    login({
-      userId: data.userId,
-      fullName: formData.fullName,
-      zodiacSign: data.zodiacSign,
-      photoPath: data.photoPath,
-    });
-
-    localStorage.setItem('token', data.token);
-    navigate('/home');
-  } catch (err) {
-    console.error('Error en la solicitud:', err);
-    setError('Error de conexión con el servidor.');
-  }
-};
+  };
 
   return (
     <div style={styles.container}>

@@ -47,7 +47,7 @@ formPayload.append('dob', formData.birthdate);
       formPayload.append('password', formData.password);
       formPayload.append('dni', formData.dni);
 
-      const res = await fetch('https://zodiacus10-backend.up.railway.app/api/auth/register', {
+      const res = await fetch('http://192.168.1.35/api/auth/register', {
         method: 'POST',
         body: formPayload,
       });

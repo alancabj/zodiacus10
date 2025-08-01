@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // <-- Importar useNavigate
 import { AuthContext } from '../context/AuthContext';
 
-const API_BASE = 'https://zodiacus10-backend.up.railway.app';
+const API_BASE = 'http://192.168.1.35:5001';
 
 const ProfileScreen = () => {
   const { user, refreshProfile } = useContext(AuthContext);

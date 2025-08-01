@@ -57,13 +57,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-          {/* Fallback para rutas no encontradas, ignorando archivos estáticos */}
-          <Route
-            path="*"
-            element={
-              window.location.pathname.includes('.') ? null : <LoginScreen />
-            }
-          />
         </Routes>
       </Router>
     </AuthProvider>

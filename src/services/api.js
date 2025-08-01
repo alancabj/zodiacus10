@@ -1,4 +1,4 @@
-const API_URL = "https://backend-zodiacus.onrender.com"; // IP local para acceder desde otros dispositivos
+const API_URL = "http://192.168.1.35:5001"; // IP local para acceder desde otros dispositivos
 
 export const registerUser = async (userData) => {
   try {
@@ -9,7 +9,7 @@ export const registerUser = async (userData) => {
       formData.append("dni", userData.dniFile);
       formData.append("password", userData.password);
 
-    const response = await fetch(`${API_URL}/api/auth/register`, {
+    const response = await fetch(`${API_URL}/register`, {
       method: "POST",
       body: formData,
     });
