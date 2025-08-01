@@ -9,7 +9,7 @@ export const registerUser = async (userData) => {
       formData.append("dni", userData.dniFile);
       formData.append("password", userData.password);
 
-    const response = await fetch(`${API_URL}/register`, {
+    const response = await fetch(`${API_URL}/api/auth/register`, {
       method: "POST",
       body: formData,
     });
