@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Node dependencies
 node_modules/
 **/node_modules/
@@ -47,6 +46,3 @@ jest-test-results.json
 # Temporary
 tmp/
 temp/
-=======
-node_modules/
->>>>>>> eaa2f29a (Corrige variable de entorno para conexión MongoDB en server.js y agrega .gitignore)
