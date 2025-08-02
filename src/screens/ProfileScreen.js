@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // <-- Importar useNavigate
 import { AuthContext } from '../context/AuthContext';
 
-const API_BASE = 'http://192.168.1.35:5001';
+const API_BASE = process.env.REACT_APP_API_URL;
 
 const ProfileScreen = () => {
   const { user, refreshProfile } = useContext(AuthContext);

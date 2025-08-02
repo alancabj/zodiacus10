@@ -43,7 +43,7 @@ const RegisterScreen = () => {
       setLoading(true);
       const formPayload = new FormData();
       formPayload.append('fullName', formData.name);
-formPayload.append('dob', formData.birthdate);
+      formPayload.append('dob', formData.birthdate);
       formPayload.append('password', formData.password);
       formPayload.append('dni', formData.dni);
 

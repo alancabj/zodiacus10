@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5001"; // fallback local
+const API_URL = "http://192.168.0.20:5001"; // IP local para acceder desde otros dispositivos
 
 export const registerUser = async (userData) => {
   try {
@@ -6,10 +6,10 @@ export const registerUser = async (userData) => {
     formData.append("fullName", userData.fullName);
     formData.append("dob", userData.dob);
     formData.append("sign", userData.sign);
-    formData.append("dni", userData.dniFile);
-    formData.append("password", userData.password);
+      formData.append("dni", userData.dniFile);
+      formData.append("password", userData.password);
 
-    const response = await fetch(`${API_URL}/api/auth/register`, {
+    const response = await fetch(`${API_URL}/register`, {
       method: "POST",
       body: formData,
     });
