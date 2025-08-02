@@ -1,1 +1,52 @@
+<<<<<<< HEAD
+# Node dependencies
 node_modules/
+**/node_modules/
+
+# Build outputs
+/build/
+**/build/
+dist/
+**/dist/
+
+# Cache folders
+.cache/
+**/.cache/
+.nyc_output/
+coverage/
+
+# Environment files
+.env
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Others
+.pnp/
+.pnp.js
+.vercel/
+.next/
+out/
+*.tgz
+
+# Lint and test
+eslintcache
+.jest/
+jest-test-results.json
+
+# Temporary
+tmp/
+temp/
+=======
+node_modules/
+>>>>>>> eaa2f29a (Corrige variable de entorno para conexión MongoDB en server.js y agrega .gitignore)
