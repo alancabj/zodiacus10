@@ -15,7 +15,13 @@ const server = http.createServer(app);
 
 initializeSocket(server);
 
-app.use(cors());
+const cors = require('cors');
+
+app.use(cors({
+  origin: ['https://zodiacus10.vercel.app', 'https://zodiacus10-nc9z8p68l-alans-projects-dc6c99a7.vercel.app'],
+  credentials: true
+}));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
