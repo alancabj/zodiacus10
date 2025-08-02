@@ -3,8 +3,8 @@ import { io } from 'socket.io-client';
 import { useNavigate } from 'react-router-dom';
 import EmojiPicker from 'emoji-picker-react';
 
-const SOCKET_SERVER_URL = 'http://192.168.0.20:5001';  // pon tu IP local
-const BASE_URL = 'http://192.168.0.20:5001/uploads/';
+const SOCKET_SERVER_URL = 'https://zodiacus-api.up.railway.app';
+const BASE_URL = 'https://zodiacus-api.up.railway.app/uploads/';
 
 const signosEmoji = {
   aries: '♈', tauro: '♉', geminis: '♊', cancer: '♋', leo: '♌',
