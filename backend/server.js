@@ -38,7 +38,7 @@ app.use('/profile_photos', express.static(path.join(__dirname, 'uploads/profile_
 app.use('/api/auth', authRoutes);
 
 // Conexión a MongoDB
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('✅ Conectado a MongoDB');
     const PORT = process.env.PORT || 5001;

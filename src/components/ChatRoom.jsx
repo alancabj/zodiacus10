@@ -58,7 +58,7 @@ const ChatRoom = ({ room }) => {
 
     socketRef.current.on('roomUsers', (usersList) => {
       setUsersRaw((prevUsers) => {
-        const currentNames = new Set(usersList.map((u) => u.fullName));
+        //const currentNames = new Set(usersList.map((u) => u.fullName));
         // Mantener copias estáticas de usuarios desconectados usados en mensajes anteriores
         const preserved = messages
           .filter((m) => m.snapshotUser)
@@ -136,7 +136,7 @@ const ChatRoom = ({ room }) => {
       socketRef.current.disconnect();
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [room]);
+  }, [room, messages]);
 
   const users = useMemo(() => {
     return usersRaw.map(u => {
