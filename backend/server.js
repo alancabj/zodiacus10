@@ -18,7 +18,8 @@ initializeSocket(server);
 const corsOptions = {
   origin: [
     'https://zodiacus10.vercel.app',
-    'https://zodiacus10-nc9z8p68l-alans-projects-dc6c99a7.vercel.app'
+    'https://zodiacus10-nc9z8p68l-alans-projects-dc6c99a7.vercel.app',
+    'https://zodiacus10-production.up.railway.app' // ⬅️ agregá este
   ],
   credentials: true
 };
