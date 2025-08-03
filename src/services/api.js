@@ -1,4 +1,4 @@
-const API_URL = "http://192.168.0.20:5001"; // IP local para acceder desde otros dispositivos
+const API_URL = "https://zodiacus10-production.up.railway.app";
 
 export const registerUser = async (userData) => {
   try {
