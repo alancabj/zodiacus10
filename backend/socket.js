@@ -2,10 +2,14 @@ const { Server } = require('socket.io');
 
 function initializeSocket(server) {
   const io = new Server(server, {
-    cors: {
-      origin: '*',
-    },
-  });
+  cors: {
+    origin: [
+      'https://zodiacus10.vercel.app',
+      'https://zodiacus10-production.up.railway.app'
+    ],
+    credentials: true
+  },
+});
 
   // Mapa temporal para almacenar likes por mensaje:
   // key: messageId, value: { likesCount: number, likedBy: Set<socketId> }
