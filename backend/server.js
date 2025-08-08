@@ -17,10 +17,12 @@ initializeSocket(server);
 
 const corsOptions = {
   origin: [
+    'http://localhost:3000', // desarrollo local
     'https://zodiacus10.vercel.app',
     'https://zodiacus10-nc9z8p68l-alans-projects-dc6c99a7.vercel.app',
-    'https://zodiacus10-pe7uyaf9h-alans-projects-dc6c99a7.vercel.app' // 🔥 agregá este
+    'https://zodiacus10-pe7uyaf9h-alans-projects-dc6c99a7.vercel.app'
   ],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true
 };
 
